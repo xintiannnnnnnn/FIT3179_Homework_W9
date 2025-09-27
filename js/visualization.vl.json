@@ -14,14 +14,25 @@
         "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
         "format": {"type": "topojson", "feature": "oceans"}
       },
-      "mark": {"type": "geoshape", "fill": "#b9d8f6"}
+      "mark": {"type": "geoshape", "fill": "#d6eefe"}
     },
     {
       "data": {
         "url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_Homework_W9/refs/heads/main/js/ne_110m.json",
         "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
       },
-      "mark": {"type": "geoshape", "fill": null, "stroke": "#bdbcbc"}
+      "mark": {"type": "geoshape", "fill": null, "stroke": "#d1d1d1"}
+    },
+    {
+      "transform": [
+        {"calculate": "'Data is not available in ' + datum.properties.NAME", "as": "note"}
+      ],
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+      "encoding": {
+        "tooltip": {
+          "field": "note"
+        }
+      }
     },
     {
       "transform": [
@@ -36,7 +47,7 @@
           }
         }
       ],
-      "mark": {"type": "geoshape"},
+      "mark": {"type": "geoshape", "stroke": "white"},
       "encoding": {
         "color": {
           "field": "Internet Users per 100",
@@ -44,7 +55,14 @@
           "scale": {
             "type": "threshold",
             "domain": [5, 15, 30, 50, 75, 100, 150],
-            "range": ["#f7f7f7", "#d9d9d9", "#bdbdbd", "#969696", "#737373", "#525252", "#252525", "#000000"]
+            "range": ["#fdbe85",
+    "#fda966",
+    "#fd9446",
+    "#f77d2f",
+    "#ec651a",
+    "#dd510c",
+    "#c14307",
+    "#a63603"]
           }
         },
         "tooltip": [
